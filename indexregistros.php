@@ -95,17 +95,29 @@ while ($row = mysqli_fetch_assoc($r)) {
 		
 	}
 	
+	if($row["Digito"]=="6"){
+		
+		$costo=$row["debito"]-$row["credito"];
+		
+		$totalcosto=$totalcosto+$costo;
+		
+	}
+	
 	
 
 }
-echo "Activo=".$totalactivo;
-echo "pasivo=".$totalpasivo;
+echo "Activo:=".$totalactivo;
+echo "pasivo:=".$totalpasivo;
 $patri=$totalactivo-$totalpasivo;
 $patri+$totalpatri+$patri;
-echo "patrimonio=".$patri;
-$balance=$patri-$totalingre;
+echo "patrimonio:=".$patri;
+$balance=$patri-$totalingre+$totalcosto;
 echo "Inrgesos".$totalingre;
-echo "balance".$balance;
+
+echo "Costos:".$totalcosto;
+
+
+echo "balance:".$balance;
 
 
 
