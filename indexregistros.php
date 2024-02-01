@@ -39,14 +39,7 @@ $(document).ready(function(){
 registros
 </title>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-  <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-		</ul>
-    </div>
-</nav>
+
 
 <br>
 <br>
@@ -95,6 +88,16 @@ while ($row = mysqli_fetch_assoc($r)) {
 		
 	}
 	
+	
+	if($row["Digito"]=="5"){
+		
+		$gasto=$row["debito"]-$row["credito"];
+		
+		$totalgasto=$totalgasto+$gasto;
+		
+	}
+	
+	
 	if($row["Digito"]=="6"){
 		
 		$costo=$row["debito"]-$row["credito"];
@@ -116,7 +119,9 @@ echo "Inrgesos".$totalingre;
 
 echo "Costos:".$totalcosto;
 
+echo "gasto:".$totalgasto;
 
+$balance=$balance-$totalgasto;
 echo "balance:".$balance;
 
 

@@ -110,7 +110,7 @@ Agregar compra
 
 <div class="row">
   <div class="col-md-6"><div class="form-group">
-  <label for="usr">Valor compra:</label>
+  <label for="usr"><FONT SIZE=5>Valor compra <A/font><label>
   <input name="codigo" type="text" class="form-control" id="codigo">
 </div>
 <button id="ingresar" type="button" class="btn btn-primary">Ingresar</button>

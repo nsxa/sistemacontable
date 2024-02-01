@@ -254,6 +254,13 @@ session_start();
       </div>
     </nav>
     <!-- End Navbar -->
+	
+	<a href="compra.php">Nueva Compra </a>
+	<a href="venta.php">Nueva Venta </a>
+	<br><br>
+	<a href="indexregistros.php">balance </a>
+	<a href="balance.php">balance detallado</a>
+	
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
