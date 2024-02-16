@@ -1,5 +1,8 @@
 
 <?php
+error_reporting(0);
+error_reporting(0);
+
 include 'registros.php';
 
 $t= new registros;
@@ -106,6 +109,14 @@ while ($row = mysqli_fetch_assoc($r)) {
 		
 	}
 	
+	if($row["Digito"]=="7"){
+		
+		$costopro=$row["debito"]-$row["credito"];
+		
+		$totalcostopro=$totalcostopro+$costopro;
+		
+	}
+	
 	
 
 }
@@ -114,10 +125,12 @@ echo "pasivo:=".$totalpasivo;
 $patri=$totalactivo-$totalpasivo;
 $patri+$totalpatri+$patri;
 echo "patrimonio:=".$patri;
-$balance=$patri-$totalingre+$totalcosto;
+$balance=$patri-$totalingre+$totalcosto+$totalcostopro;
 echo "Inrgesos".$totalingre;
 
 echo "Costos:".$totalcosto;
+
+echo "Costosproduccion:".$totalcostopro;
 
 echo "gasto:".$totalgasto;
 

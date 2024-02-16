@@ -102,6 +102,17 @@ while ($row = mysqli_fetch_assoc($r)) {
 		
 	}
 	
+	if($row["Digito"]=="7"){
+		
+		$costopro=$row["debito"]-$row["credito"];
+		
+		$totalcostopro=$totalcostopro+$costopro;
+		
+		$costoproarreglo[]=$row;
+		
+	}
+	
+	
 	
 
 }
@@ -172,9 +183,19 @@ echo "Costos <br> codigo | Cuenta | Debe | Haber <br>";
 	}
 echo "Total Costos: ".$totalcosto;
 
+echo "<br>";
 
 
+echo "Costos Produccion <br> codigo | Cuenta | Debe | Haber <br>";
+	
+	foreach($costoproarreglo as $micostopro){
+		
+		
+		echo $micostopro["codigo"]." | ".$micostopro["cuenta"]." | ".$micostopro["debito"]."  ||  ".$micostopro["credito"]."<br>";
+	}
+echo "Total Costos producion : ".$totalcostopro;
 
+echo "<br>";
 
 	
 echo "<br><br><br>";
@@ -183,7 +204,7 @@ echo "pasivo:=".$totalpasivo;
 $patri=$totalactivo-$totalpasivo;
 $patri+$totalpatri+$patri;
 echo "patrimonio:=".$patri;
-$balance=$patri-$totalingre+$totalcosto;
+$balance=$patri-$totalingre+$totalcosto+$totalcostopro;
 echo "Inrgesos".$totalingre;
 
 echo "Costos:".$totalcosto;
